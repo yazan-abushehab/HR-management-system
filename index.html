@@ -1,41 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/4f7fe5e387.js" crossorigin="anonymous"></script>
-    
-</head>
-<body>
-   <header>
-    <h1>HR-management</h1>
-    <nav>
-        <a href="./index.html">home</a>
-        <a href="./accounting.html">sign in</a>
-        <a href="https://www.google.com">about us</a>
-        <a href="https://www.facebook.com">like us</a>
-    </nav>
-    <img src="./img/hr-logo.jpg" alt="hr-logo">
-   </header>
-   <main>
-    <script src="./js/app.Js"></script> 
-   </main>
-   <footer>
-    <div id="footer-logo">
-        <img src="./img/hr-logo.jpg" alt="logo">
-    </div>
-    <div id="copy-rights">
-        <p>&COPY; All Rigths Reserved</p>
-    </div>
-    <div id="social media"></div>
-         <p>follow us</p>
-         <i class="fa-duotone fa-phone"></i>
-         <i class="fa-brands fa-facebook-messenger"></i>
-         <i class="fa-brands fa-youtube"></i>
 
-   </footer>
-  
+</head>
+
+<body>
+    <header>
+        <h1>HR-management</h1>
+        <nav>
+            <a href="./index.html">home</a>
+            <a href="./accounting.html">sign in</a>
+            <a href="https://www.google.com">about us</a>
+            <a href="https://www.facebook.com">like us</a>
+        </nav>
+        <img src="./img/hr-logo.jpg" alt="hr-logo">
+    </header>
+    <main>
+        <h2>Add information</h2>
+        <form id="employeeform">
+            <fieldset>
+                <legend>Add new employee</legend>
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" placeholder="Full Name">
+                <br />
+                <br />
+                <label for="Department">Department</label>
+                <select id="Department" name="Department">
+                    <option value="1">select</option>
+                    <option value="2">Administration</option>
+                    <option value="3">Marketing</option>
+                    <option value="4">Development</option>
+                    <option value="5">Finance</option>
+                </select>
+                <br />
+                <br />
+                <label for="Level">Level</label>
+                <select id="Level" name="level">
+                    <option value="1">select</option>
+                    <option value="2">Senior</option>
+                    <option value="3">Mid-senior</option>
+                    <option value="4">Junior</option>
+                </select>
+                <br />
+                <br />
+                <label for="imgUrl">Image</label>
+                <input type="text" name="imgUrl" id="imgUrl" placeholder="image path">
+                <br />
+                <br />
+                <input type="submit" value="Add">
+            </fieldset>
+        </form>
+        <section id="employ"> </section>
+    </main>
+    <footer>
+       
+        <div id="footer-logo">
+            <img src="./img/hr-logo.jpg" alt="logo">
+        </div>
+        <div id="copy-rights">
+            <p>&COPY; All Rigths Reserved</p>
+        </div>
+        <div id="social media"></div>
+        <p>follow us</p>
+        <i class="fa-duotone fa-phone"></i>
+        <i class="fa-brands fa-facebook-messenger"></i>
+        <i class="fa-brands fa-youtube"></i>
+
+    </footer>
+    <script src="./js/app.Js"></script>
 </body>
+
 </html>
