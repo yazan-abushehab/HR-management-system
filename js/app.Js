@@ -11,13 +11,14 @@ employee.prototype.salary = function (min, max) {
     let baseSalary = Math.random() * (max - min) + min;
     let Tax = baseSalary * 0.075;
     let netSalary = baseSalary - Tax;
-    return netSalary;
+    let netSalary2 = Math.ceil(netSalary)
+    return netSalary2;
 }
 
 employee.prototype.render = function (min, max) {
-    document.write(`${this.fullName+"     "}`);
-    document.write(`${this.salary(min, max)+"<br>"}`);
- 
+    document.write(`${this.fullName + "     "}`);
+    document.write(`${this.salary(min, max) + "<br>"}`);
+
 }
 
 let Ghazi = new employee(1000, "ghaziSamer", "Administration", "Senior", "img/d1.jpg");
@@ -28,10 +29,10 @@ let Omer = new employee(1004, "omerZaid", "Development", "Senior", "img/d5.jpg")
 let Rana = new employee(1005, "ranaSaleh", "Development", "Junior", "img/d6.jpg");
 let Hadi = new employee(1006, "hadiAhmad", "Finance", "Mid-Senior", "img/d7.jpg");
 
-Ghazi.render(1500,2000);
-Lana.render(1500,2000);
-Tamara.render(1500,2000);
-Saif.render(1000,1500);
-Omer.render(1500,2000);
-Rana.render(500,1000);
-Hadi.render(1000,1500);
+Ghazi.render(1500, 2000);
+Lana.render(1500, 2000);
+Tamara.render(1500, 2000);
+Saif.render(1000, 1500);
+Omer.render(1500, 2000);
+Rana.render(500, 1000);
+Hadi.render(1000, 1500);
