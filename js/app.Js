@@ -47,7 +47,6 @@ function newEmployee(event){
     event.preventDefault();
     let employeeName = event.target.name.value;
     let depar = event.target.Department.value;
-    console.log(depar);
     let lev = event.target.level.value;
     let imge = event.target.imgUrl.value;
 
