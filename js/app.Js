@@ -1,25 +1,52 @@
 "use strict"
 function employee(fullName, department, level, image) {
-    this.employeeID = 0;
     this.fullName = fullName;
     this.department = department;
     this.level = level;
     this.image = image;
+    this.setemployeeID();
+    if (level==="Junior"){
+        this.salary=this.getsalary(500,1000)
+    }else if (level==="Mid-senior"){
+        this.salary=this.getsalary(1000,1500)
+    }else {
+        this.salary=this.getsalary(1500,2000) 
+    }
 
 }
-employee.prototype.getemployeeID = function (){
+employee.prototype.setemployeeID = function (){
     this.employeeID = getRandomInt();
-} 
- function getRandomInt(){   
-   return Math.floor(Math.random() * 9000 + 1000);
 }
+const ids = []; 
+function getRandomInt(){   
+   const randomId =  Math.floor(Math.random() * 9000 + 1000);
+   if (!ids.includes(randomId)){
+    ids.push(randomId)
+    return randomId;
+   }
+   return getRandomInt();
+ }
 employee.prototype.render = function (){
-    const container = document.getElementById('employ');
-    console.log(container);
+    let elName;
+if (dep === 'admin') elName = 'admin'
+else if (dep === 'dev') elNeme = 'dev'
+
+
+    const container = document.getElementById("employ");
+    container.classList.add("container")
     
     const divEl = document.createElement('div');
     container.appendChild(divEl);
-    
+    divEl.classList.add("divElc")
+
+    const imgEl = document.createElement ('img');
+    const El = document.createElement ('div');
+    El.appendChild(imgEl);
+    divEl.appendChild(El);
+    imgEl.setAttribute ('src',this.image);
+    imgEl.classList.add("image")
+    El.classList.add("imageDiv")
+
     const nameEl = document.createElement('h4');
     divEl.appendChild(nameEl);
     nameEl.textContent = this.fullName;
@@ -36,9 +63,9 @@ employee.prototype.render = function (){
     divEl.appendChild(levEl);
     levEl.textContent = this.level;
 
-    const imgEl = document.createElement ('img');
-    divEl.appendChild(imgEl);
-    imgEl.setAttribute ('src',this.image);
+    const salaryEl = document.createElement ('h4');
+    divEl.appendChild(salaryEl);
+    salaryEl.textContent = this.salary;  
 }
 let employeeForm = document.getElementById("employeeform");
 employeeForm.addEventListener('submit',newEmployee);
@@ -47,16 +74,15 @@ function newEmployee(event){
     event.preventDefault();
     let employeeName = event.target.name.value;
     let depar = event.target.Department.value;
-    console.log(depar);
     let lev = event.target.level.value;
     let imge = event.target.imgUrl.value;
 
     let newEmployee = new employee (employeeName,depar,lev,imge);
-    newEmployee.getemployeeID();
     newEmployee.render();
 
+
 }
-employee.prototype.salary = function (min, max) {
+employee.prototype.getsalary = function (min, max) {
     let baseSalary = Math.random() * (max - min) + min;
     let Tax = baseSalary * 0.075;
     let netSalary = baseSalary - Tax;
