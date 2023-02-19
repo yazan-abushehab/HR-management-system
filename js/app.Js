@@ -56,7 +56,13 @@ function newEmployee(event){
     newEmployee.render();
 
 }
-
+employee.prototype.salary = function (min, max) {
+    let baseSalary = Math.random() * (max - min) + min;
+    let Tax = baseSalary * 0.075;
+    let netSalary = baseSalary - Tax;
+    let netSalary2 = Math.ceil(netSalary)
+    return netSalary2;
+}
 
 
 
