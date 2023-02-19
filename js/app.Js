@@ -15,7 +15,7 @@ employee.prototype.getemployeeID = function (){
 }
 employee.prototype.render = function (){
     const container = document.getElementById('employ');
-    console.log(container);
+    
     
     const divEl = document.createElement('div');
     container.appendChild(divEl);
