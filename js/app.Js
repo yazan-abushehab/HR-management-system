@@ -27,9 +27,9 @@ function getRandomInt(){
    return getRandomInt();
  }
 employee.prototype.render = function (){
-    let elName;
-if (dep === 'admin') elName = 'admin'
-else if (dep === 'dev') elNeme = 'dev'
+//     let elName;
+// if (dep === 'admin') elName = 'admin'
+// else if (dep === 'dev') elNeme = 'dev'
 
 
     const container = document.getElementById("employ");
@@ -49,23 +49,23 @@ else if (dep === 'dev') elNeme = 'dev'
 
     const nameEl = document.createElement('h4');
     divEl.appendChild(nameEl);
-    nameEl.textContent = this.fullName;
+    nameEl.textContent = `Name: ${this.fullName}`;
     
     const idEl =document.createElement('h4');
     divEl.appendChild(idEl);
-    idEl.textContent = this.employeeID;
+    idEl.textContent = `ID:${this.employeeID}`;
 
     const depEl = document.createElement ('h4');
     divEl.appendChild(depEl);
-    depEl.textContent = this.department;
+    depEl.textContent = `Department: ${this.department}`;
 
     const levEl = document.createElement ('h4');
     divEl.appendChild(levEl);
-    levEl.textContent = this.level;
+    levEl.textContent = `Level: ${this.level}`;
 
     const salaryEl = document.createElement ('h4');
     divEl.appendChild(salaryEl);
-    salaryEl.textContent = this.salary;  
+    salaryEl.textContent = `Salary: ${this.salary}`;  
 }
 let employeeForm = document.getElementById("employeeform");
 employeeForm.addEventListener('submit',newEmployee);
